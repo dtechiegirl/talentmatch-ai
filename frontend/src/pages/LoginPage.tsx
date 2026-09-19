@@ -5,11 +5,13 @@ import { login } from '../services/api'
 interface LoginPageProps {
   onLoginSuccess: () => void
   onBack: () => void
+  onRegister: () => void
 }
 
 function LoginPage({
   onLoginSuccess,
   onBack,
+  onRegister,
 }: LoginPageProps) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -188,11 +190,38 @@ function LoginPage({
             </div>
           </form>
 
+          <div
+            style={{
+              marginTop: '20px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}
+          >
+            <span>Don't have an account?</span>
+
+            <button
+              type="button"
+              onClick={onRegister}
+              style={{
+                border: 'none',
+                background: 'transparent',
+                padding: 0,
+                cursor: 'pointer',
+                font: 'inherit',
+                fontWeight: 600,
+                textDecoration: 'underline',
+              }}
+            >
+              Click here to register
+            </button>
+          </div>
+
           <button
             type="button"
             onClick={onBack}
             style={{
-              marginTop: '20px',
+              marginTop: '16px',
               border: 'none',
               background: 'transparent',
               padding: 0,
